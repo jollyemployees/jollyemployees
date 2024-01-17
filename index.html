@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
-    
-<style>
-body {
- background: #1488CC;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-padding-top: 35px;
-  font-family: 'Roboto', sans-serif;
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background: #1488CC;
+      padding-top: 10px; /* Reduced padding-top */
+      font-family: 'Roboto', sans-serif;
       font-size: 24px;
-  color: white;
-}
-  .content {
-  max-width: 500px;
-  margin: auto;
-}
-  
-</style>
-    
-  </head>
+      color: white;
+      margin: 0; /* Remove default margin */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .content {
+      max-width: 500px;
+      text-align: center; /* Center text within the container */
+    }
+
+    .content img {
+      display: block; /* Center image horizontally */
+      margin: 0 auto;
+      width: 50px;
+      height: 50px;
+    }
+
+    .content a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
 <body>
-<div class="content">
-  <img src="https://github.com/jollyemployees/jollyemployees/blob/main/logo.png?raw=true" alt="JOLLY Employees logo" style="width:50px;height:50px;">
-<br />
-  <br />
-  
-  <iframe width="640" height="480" src="https://www.youtube.com/embed/R9fHribbNF8?si=ibAGqA1wj6Bs_73d" title="YouTube video player" style="border: 10px solid white; border-radius: 5px; overflow: hidden;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<br />
-  <br />
-  <a href="https://calendly.com/averyjollyemployees/chat">Get Started</a>
-</div>
+  <div class="content">
+    <img src="https://github.com/jollyemployees/jollyemployees/blob/main/logo.png?raw=true" alt="JOLLY Employees logo">
+    <br />
+    <br />
+    <iframe width="640" height="480" src="https://www.youtube.com/embed/R9fHribbNF8?si=ibAGqA1wj6Bs_73d" title="YouTube video player" style="border: 10px solid white; border-radius: 5px; overflow: hidden;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <br />
+    <br />
+    <a href="https://calendly.com/averyjollyemployees/chat">Get Started</a>
+  </div>
+</body>
 </html>
