@@ -14,6 +14,7 @@
       color: white;
       margin: 0; /* Remove default margin */
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
@@ -22,18 +23,23 @@
     .content {
       max-width: 500px;
       text-align: center; /* Center text within the container */
+      margin: 0 auto; /* Center the container horizontally */
     }
 
     .content img {
-      display: block; /* Center image horizontally */
-      margin: 0 auto;
       width: 50px;
       height: 50px;
+      display: block; /* Center image horizontally */
+      margin: 0 auto;
     }
 
     .content a {
       color: white;
       text-decoration: none;
+    }
+
+    iframe {
+      margin-top: 20px; /* Adjust the margin for the iframe */
     }
   </style>
 </head>
