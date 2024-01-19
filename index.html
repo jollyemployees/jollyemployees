@@ -28,8 +28,20 @@
       margin: 0; /* Remove default margin for better positioning */
     }
 
-    iframe {
+    .video-container {
+      position: relative;
+      overflow: hidden;
       width: 100%;
+      padding-top: 56.25%; /* Aspect ratio for 16:9 videos */
+      margin-bottom: 20px; /* Add margin for better spacing */
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
@@ -37,7 +49,11 @@
 <body>
   <img src="https://github.com/jollyemployees/jollyemployees/blob/main/logoJE.png?raw=true" alt="JOLLY Employees logo">
   <h2>Make your employees jolly.</h2>
-  <iframe src="https://www.youtube.com/embed/IYuPZEB3QMI?si=wL5JwBMYlBMKXKJ_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/IYuPZEB3QMI?si=wL5JwBMYlBMKXKJ_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  
   <a href="https://calendly.com/averyjollyemployees/chat" style="text-decoration: none; color: #fe5e62;">
     <h2>Get started.</h2>
   </a>
