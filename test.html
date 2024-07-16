@@ -18,8 +18,17 @@
 
     .header {
       height: 50px;
-      background-color: #000000;
+      background-color: #ffffff;
       margin-bottom: 20px;
+      position: relative;
+    }
+
+    .header img {
+      position: absolute;
+      left: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 100%;
     }
 
     .container {
@@ -60,7 +69,9 @@
 
 <body>
 
-  <div class="header"></div>
+  <div class="header">
+    <img src="https://raw.githubusercontent.com/jollyemployees/jollyemployees/main/JE%20logo.ico" alt="JOLLY Employees Logo">
+  </div>
 
   <div class="container">
     <div class="left-column">
