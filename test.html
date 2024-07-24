@@ -33,6 +33,10 @@
             height: 100%;
             border: none;
         }
+        .rss-item img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +55,7 @@
         <div class="column">
             <!-- Embed HTML code here for column 3 -->
             <div>
+                <h2>Column 3 Content</h2>
                 <div id="rss-feed" class="rss-feed">Loading...</div>
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
@@ -75,7 +80,7 @@
                                     html += `
                                         <div class="rss-item">
                                             <h2><a href="${link}" target="_blank">${title}</a></h2>
-                                            ${imageUrl ? `<img src="${imageUrl}" alt="${title}">` : ''}
+                                            ${imageUrl ? `<img src="${imageUrl}" alt="${title}" style="max-width: 100%; height: auto;">` : ''}
                                             <p>${description}</p>
                                             <small>${pubDate}</small>
                                         </div>
