@@ -44,25 +44,104 @@
         </div>
         <div class="column">
             <!-- Embed URL as iframe for column 2 -->
-            <iframe src="https://example.com"></iframe>
+            <iframe src="https://widgets.media.sportradar.com/uscommon/en_us/standalone/us.season.scores#uniqueTournamentId=109&preMatchLinks=default&liveMatchLinks=default&postMatchLinks=default&numFutureDays=0&border=false&seasonId=112588"></iframe>
         </div>
         <div class="column">
             <!-- Embed HTML code here for column 3 -->
             <div>
                 <h2>Column 3 Content</h2>
-                <p>This is some sample HTML content for column 3.</p>
+                <p><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MLB News</title>
+    <style>
+        .rss-feed {
+            font-family: Arial, sans-serif;
+        }
+        .rss-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .rss-item h2 {
+            margin: 0 0 10px 0;
+        }
+        .rss-item img {
+            max-width: 100%;
+        }
+        .rss-item p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="rss-feed" class="rss-feed">Loading...</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rssFeedUrl = 'https://www.espn.com/espn/rss/mlb/news'; // Replace with the actual URL
+
+            fetch(rssFeedUrl)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(data, 'text/xml');
+                    const items = xml.querySelectorAll('item');
+                    let html = '';
+
+                    items.forEach(item => {
+                        const title = item.querySelector('title').textContent;
+                        const link = item.querySelector('link').textContent;
+                        const description = item.querySelector('description').textContent;
+                        const pubDate = item.querySelector('pubDate').textContent;
+                        const enclosure = item.querySelector('enclosure');
+                        const imageUrl = enclosure ? enclosure.getAttribute('url') : '';
+
+                        html += `
+                            <div class="rss-item">
+                                <h2><a href="${link}" target="_blank">${title}</a></h2>
+                                ${imageUrl ? `<img src="${imageUrl}" alt="${title}">` : ''}
+                                <p>${description}</p>
+                                <small>${pubDate}</small>
+                            </div>
+                        `;
+                    });
+
+                    document.getElementById('rss-feed').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error fetching RSS feed:', error);
+                    document.getElementById('rss-feed').innerText = 'Failed to load RSS feed.';
+                });
+        });
+    </script>
+</body>
+</html>
+</p>
             </div>
         </div>
         <div class="column">
             <!-- Embed HTML code here for column 4 -->
             <div>
-                <h2>Column 4 Content</h2>
-                <p>This is some sample HTML content for column 4.</p>
+                <a class="twitter-timeline" href="https://twitter.com/MLB?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noborders noscrollbar transparent" style="width: 300px;">Tweets by MLB</a> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+    window.addEventListener('load', function() {
+        let twitterFrame = document.querySelector('.twitter-timeline');
+        twitterFrame.onload = function() {
+            let innerDoc = twitterFrame.contentDocument || twitterFrame.contentWindow.document;
+            let tweetElements = innerDoc.querySelectorAll('div');
+            tweetElements.forEach(element => {
+                element.style.borderRadius = '0';
+            });
+        };
+    });
+</script>
+
             </div>
         </div>
         <div class="column">
             <!-- Embed URL as iframe for column 5 -->
-            <iframe src="https://example.com"></iframe>
+            <iframe src="https://widgets.media.sportradar.com/uscommon/en_us/standalone/us.season.mlb.standings#border=false&seasonId=112588"></iframe>
         </div>
     </div>
 </body>
