@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Columns Layout with Iframes</title>
+    <title>5 Columns Layout with Embedded HTML</title>
     <style>
         html, body {
             height: 100%;
@@ -26,29 +26,45 @@
         .column:nth-child(3) { width: 242px; background-color: #d1d1d1; }
         .column:nth-child(4) { width: 195px; background-color: #c1c1c1; }
         .column:nth-child(5) { width: 464px; background-color: #b1b1b1; }
-        iframe {
-            border: none;
-            width: 100%;
+        .content {
             height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <div class="row">
         <div class="column">
-            <iframe src="https://example.com"></iframe>
+            <div class="content">
+                <!-- Your HTML content for column 1 goes here -->
+                <p>Content for column 1</p>
+            </div>
         </div>
         <div class="column">
-            <iframe src="https://example.com"></iframe>
+            <div class="content">
+                <!-- Your HTML content for column 2 goes here -->
+                <p>Content for column 2</p>
+            </div>
         </div>
         <div class="column">
-            <iframe src="https://example.com"></iframe>
+            <div class="content">
+                <!-- Your HTML content for column 3 goes here -->
+                <p>Content for column 3</p>
+            </div>
         </div>
         <div class="column">
-            <iframe src="https://example.com"></iframe>
+            <div class="content">
+                <!-- Your HTML content for column 4 goes here -->
+                <p>Content for column 4</p>
+            </div>
         </div>
         <div class="column">
-            <iframe src="https://example.com"></iframe>
+            <div class="content">
+                <!-- Your HTML content for column 5 goes here -->
+                <p>Content for column 5</p>
+            </div>
         </div>
     </div>
 </body>
