@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Columns Layout with Embedded HTML</title>
+    <title>5 Columns Layout with Mixed Content</title>
     <style>
         html, body {
             height: 100%;
@@ -26,111 +26,43 @@
         .column:nth-child(3) { width: 242px; background-color: #d1d1d1; }
         .column:nth-child(4) { width: 195px; background-color: #c1c1c1; }
         .column:nth-child(5) { width: 464px; background-color: #b1b1b1; }
-        .content {
-            height: 100%;
+        iframe {
             width: 100%;
-            box-sizing: border-box;
-            padding: 10px;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
     <div class="row">
         <div class="column">
-            <div class="content">
-                <!-- Your HTML content for column 1 goes here -->
-                <p>Content for column 1</p>
+            <!-- Embed HTML code here for column 1 -->
+            <div>
+                <h2>Column 1 Content</h2>
+                <p>This is some sample HTML content for column 1.</p>
             </div>
         </div>
         <div class="column">
-            <div class="content">
-                <!-- Your HTML content for column 2 goes here -->
-                <p>Content for column 2</p>
+            <!-- Embed URL as iframe for column 2 -->
+            <iframe src="https://example.com"></iframe>
+        </div>
+        <div class="column">
+            <!-- Embed HTML code here for column 3 -->
+            <div>
+                <h2>Column 3 Content</h2>
+                <p>This is some sample HTML content for column 3.</p>
             </div>
         </div>
         <div class="column">
-            <div class="content">
-                <!-- Your HTML content for column 3 goes here -->
-                <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MLB News</title>
-    <style>
-        .rss-feed {
-            font-family: Arial, sans-serif;
-        }
-        .rss-item {
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
-        }
-        .rss-item h2 {
-            margin: 0 0 10px 0;
-        }
-        .rss-item img {
-            max-width: 100%;
-        }
-        .rss-item p {
-            margin: 5px 0;
-        }
-    </style>
-</head>
-<body>
-    <div id="rss-feed" class="rss-feed">Loading...</div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const rssFeedUrl = 'https://www.espn.com/espn/rss/mlb/news'; // Replace with the actual URL
-
-            fetch(rssFeedUrl)
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const xml = parser.parseFromString(data, 'text/xml');
-                    const items = xml.querySelectorAll('item');
-                    let html = '';
-
-                    items.forEach(item => {
-                        const title = item.querySelector('title').textContent;
-                        const link = item.querySelector('link').textContent;
-                        const description = item.querySelector('description').textContent;
-                        const pubDate = item.querySelector('pubDate').textContent;
-                        const enclosure = item.querySelector('enclosure');
-                        const imageUrl = enclosure ? enclosure.getAttribute('url') : '';
-
-                        html += `
-                            <div class="rss-item">
-                                <h2><a href="${link}" target="_blank">${title}</a></h2>
-                                ${imageUrl ? `<img src="${imageUrl}" alt="${title}">` : ''}
-                                <p>${description}</p>
-                                <small>${pubDate}</small>
-                            </div>
-                        `;
-                    });
-
-                    document.getElementById('rss-feed').innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('Error fetching RSS feed:', error);
-                    document.getElementById('rss-feed').innerText = 'Failed to load RSS feed.';
-                });
-        });
-    </script>
-</body>
-</html>
-
+            <!-- Embed HTML code here for column 4 -->
+            <div>
+                <h2>Column 4 Content</h2>
+                <p>This is some sample HTML content for column 4.</p>
             </div>
         </div>
         <div class="column">
-            <div class="content">
-                <!-- Your HTML content for column 4 goes here -->
-                <p>Content for column 4</p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="content">
-                <!-- Your HTML content for column 5 goes here -->
-                <p>Content for column 5</p>
-            </div>
+            <!-- Embed URL as iframe for column 5 -->
+            <iframe src="https://example.com"></iframe>
         </div>
     </div>
 </body>
