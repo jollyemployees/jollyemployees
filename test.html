@@ -14,30 +14,37 @@
         .table {
             display: flex;
             width: 100%;
-            height: calc(100% - 55px); /* Full height minus the footer */
+            height: calc(100% - 55px - 65px); /* Full height minus the footer and first row */
             overflow-y: auto;
+            margin-top: 65px;
         }
         .column1 {
             width: 80px;
-            height: 100%;
+            height: calc(100% - 55px);
             background-color: black;
+            position: fixed;
+            top: 65px;
+            left: 0;
         }
-        .column2 {
-            width: 1360px;
+        .content {
+            margin-left: 80px; /* Offset by the fixed column */
+            width: calc(100% - 80px);
             height: 100%;
             display: flex;
             flex-direction: column;
         }
-        .row {
-            width: 100%;
-            display: flex;
-        }
         .row1 {
             height: 65px;
+            width: 100%;
             background-color: white;
+            position: fixed;
+            top: 0;
+            left: 80px;
+            z-index: 1;
         }
         .row2 {
             height: 70px;
+            width: 100%;
             background-color: white;
         }
         .row3 {
@@ -149,7 +156,7 @@
         .footer {
             height: 55px;
             width: 100%;
-            background-color: white;
+            background-color: black;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -157,48 +164,50 @@
     </style>
 </head>
 <body>
+    <div class="column1"></div>
+    MLB<br />
+    NFL<br />
+    <div class="row1"></div>
     <div class="table">
-        <div class="column1"></div>
-        <div class="column2">
-            <div class="row row1"></div>
+        <div class="content">
             <div class="row row2"></div>
             <div class="row row3">
                 <div class="scroll"></div>
                 <div class="feed-column">
-                    <div class="feed-row">Feed row</div>
-                    <div class="highlights-row">Highlights row</div>
-                    <div class="betting-row">Betting row</div>
-                    <div class="podcasts-row">Podcasts row</div>
+                    <div class="feed-row"></div>
+                    <div class="highlights-row"></div>
+                    <div class="betting-row"></div>
+                    <div class="podcasts-row"></div>
                 </div>
                 <div class="scroll"></div>
                 <div class="x-com-column">
                     <div class="x-com-news">
-                        <div class="x-com-column-within">X.com column within X.com and News row</div>
-                        <div class="news-column-within">News column within X.com and News row</div>
+                        <div class="x-com-column-within"></div>
+                        <div class="news-column-within"></div>
                     </div>
-                    <div class="standings">Standings</div>
+                    <div class="standings"></div>
                     <div class="reddit-learn">
-                        <div class="reddit">Reddit</div>
-                        <div class="learn">Learn</div>
+                        <div class="reddit"></div>
+                        <div class="learn"></div>
                     </div>
                 </div>
                 <div class="scroll"></div>
             </div>
             <div class="row row4">
-                <div class="column column1-row4">Column 1</div>
-                <div class="column column2-row4">Column 2</div>
-                <div class="column column3-row4">Column 3</div>
-                <div class="column column4-row4">Column 4</div>
+                <div class="column column1-row4"></div>
+                <div class="column column2-row4"></div>
+                <div class="column column3-row4"></div>
+                <div class="column column4-row4"></div>
             </div>
             <div class="row row5">
-                <div class="column1-row5">Column 1</div>
+                <div class="column1-row5"></div>
                 <div class="column2-row5">
-                    <div class="row-within row-within1">Row 1</div>
-                    <div class="row-within row-within2">Row 2</div>
-                    <div class="row-within row-within3">Row 3</div>
-                    <div class="row-within row-within4">Row 4</div>
+                    <div class="row-within row-within1"></div>
+                    <div class="row-within row-within2"></div>
+                    <div class="row-within row-within3"></div>
+                    <div class="row-within row-within4"></div>
                 </div>
-                <div class="column3-row5">Column 3</div>
+                <div class="column3-row5"></div>
             </div>
         </div>
     </div>
