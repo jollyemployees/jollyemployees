@@ -2,127 +2,159 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Columns Layout with Mixed Content</title>
+    <title>Complex Layout</title>
     <style>
         html, body {
-            height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            background-color: white;
-        }
-        .row {
-            display: flex;
-            height: 100vh;
-        }
-        .column {
-            overflow-y: auto;
-            overflow-x: hidden;
-            position: relative;
-            background-color: white;
-        }
-        .column:nth-child(1) { width: 180px; }
-        .column:nth-child(2) { width: 312px; }
-        .column:nth-child(3) { width: 242px; }
-        .column:nth-child(4) { width: 195px; }
-        .column:nth-child(5) { width: 464px; }
-        iframe {
             width: 100%;
             height: 100%;
-            border: none;
+            overflow: hidden;
         }
-        .rss-item img {
-            max-width: 100%;
-            height: auto;
+        .table {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        .column1 {
+            width: 80px;
+            height: 100%;
+            background-color: white;
+        }
+        .column2 {
+            width: 1350px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .row1, .row2, .row3, .row4, .row5 {
+            width: 100%;
+        }
+        .row1 {
+            height: 65px;
+            background-color: white;
+        }
+        .row2 {
+            height: 70px;
+            background-color: white;
+        }
+        .row3, .row4, .row5 {
+            display: flex;
+        }
+        .row3 {
+            height: 915px;
+        }
+        .row3 .column {
+            height: 100%;
+        }
+        .row3 .column1 {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+        .row3 .column1 .row {
+            background-color: white;
+        }
+        .row3 .column1 .row1 {
+            height: 600px;
+        }
+        .row3 .column1 .row2 {
+            height: 315px;
+        }
+        .row3 .column2, .row3 .column4 {
+            width: 30px;
+            background-color: #ed2fe0;
+        }
+        .row3 .column3 {
+            width: 460px;
+            background-color: white;
+        }
+        .row3 .column5 {
+            width: 240px;
+            background-color: white;
+        }
+        .row4 {
+            height: 520px;
+        }
+        .row4 .column1 {
+            width: 620px;
+            background-color: white;
+        }
+        .row4 .column2, .row4 .column4 {
+            width: 30px;
+            background-color: #ed2fe0;
+        }
+        .row4 .column3 {
+            width: 700px;
+            background-color: white;
+        }
+        .row5 {
+            flex-grow: 1;
+        }
+        .row5 .column {
+            height: 100%;
+        }
+        .row5 .column1, .row5 .column3 {
+            width: 30px;
+            background-color: #ed2fe0;
+        }
+        .row5 .column2 {
+            width: 1300px;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+        .row5 .column2 .row {
+            width: 100%;
+            background-color: white;
+        }
+        .row5 .column2 .row1, .row5 .column2 .row2, .row5 .column2 .row3, .row5 .column2 .row4 {
+            height: 600px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            background-color: white;
         }
     </style>
 </head>
 <body>
-    <div class="row">
-        <div class="column">
-            <!-- Embed HTML code here for column 1 -->
-            <div>
-                <h2>Column 1 Content</h2>
-                <p>This is some sample HTML content for column 1.</p>
+    <div class="table">
+        <div class="column1"></div>
+        <div class="column2">
+            <div class="row1"></div>
+            <div class="row2"></div>
+            <div class="row3">
+                <div class="column column1">
+                    <div class="row row1"></div>
+                    <div class="row row2"></div>
+                </div>
+                <div class="column column2"></div>
+                <div class="column column3"></div>
+                <div class="column column4"></div>
+                <div class="column column5"></div>
+            </div>
+            <div class="row4">
+                <div class="column column1"></div>
+                <div class="column column2"></div>
+                <div class="column column3"></div>
+                <div class="column column4"></div>
+            </div>
+            <div class="row5">
+                <div class="column column1"></div>
+                <div class="column column2">
+                    <div class="row row1"></div>
+                    <div class="row row2"></div>
+                    <div class="row row3"></div>
+                    <div class="row row4"></div>
+                </div>
+                <div class="column column3"></div>
             </div>
         </div>
-        <div class="column">
-            <!-- Embed URL as iframe for column 2 -->
-<iframe src="https://baseballsavant.mlb.com/gamefeed" 
-        style="position: absolute; top: -1650px; left: 0; width: 100%; height: calc(100% + 200px); border: none;" 
-        scrolling="yes">
-</iframe>
-        </div>
-        <div class="column">
-            <!-- Embed HTML code here for column 3 -->
-            <div>
-                <h2>Column 3 Content</h2>
-                <div id="rss-feed" class="rss-feed">Loading...</div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const rssFeedUrl = 'https://www.espn.com/espn/rss/mlb/news'; // Replace with the actual URL
-
-                        fetch(rssFeedUrl)
-                            .then(response => response.text())
-                            .then(data => {
-                                const parser = new DOMParser();
-                                const xml = parser.parseFromString(data, 'text/xml');
-                                const items = xml.querySelectorAll('item');
-                                let html = '';
-
-                                items.forEach(item => {
-                                    const title = item.querySelector('title').textContent;
-                                    const link = item.querySelector('link').textContent;
-                                    const description = item.querySelector('description').textContent;
-                                    const pubDate = item.querySelector('pubDate').textContent;
-                                    const enclosure = item.querySelector('enclosure');
-                                    const imageUrl = enclosure ? enclosure.getAttribute('url') : '';
-
-                                    html += `
-                                        <div class="rss-item">
-                                            <h2><a href="${link}" target="_blank">${title}</a></h2>
-                                            ${imageUrl ? `<img src="${imageUrl}" alt="${title}" style="max-width: 100%; height: auto;">` : ''}
-                                            <p>${description}</p>
-                                            <small>${pubDate}</small>
-                                        </div>
-                                    `;
-                                });
-
-                                document.getElementById('rss-feed').innerHTML = html;
-                            })
-                            .catch(error => {
-                                console.error('Error fetching RSS feed:', error);
-                                document.getElementById('rss-feed').innerText = 'Failed to load RSS feed.';
-                            });
-                    });
-                </script>
-            </div>
-        </div>
-        <div class="column">
-            <!-- Embed HTML code here for column 4 -->
-            <div>
-                <a class="twitter-timeline" href="https://twitter.com/MLB?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noborders noscrollbar transparent">Tweets by MLB</a> 
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                <script>
-                    window.addEventListener('load', function() {
-                        let twitterFrame = document.querySelector('.twitter-timeline');
-                        twitterFrame.onload = function() {
-                            let innerDoc = twitterFrame.contentDocument || twitterFrame.contentWindow.document;
-                            let tweetElements = innerDoc.querySelectorAll('div');
-                            tweetElements.forEach(element => {
-                                element.style.borderRadius = '0';
-                            });
-                        };
-                    });
-                </script>
-            </div>
-        </div>
-        <div class="column">
-            <!-- Embed URL as iframe for column 5 -->
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-38963134-9252-47e6-997f-e0705fb7ce52" data-elfsight-app-lazy></div>        </div>
     </div>
+    <div class="footer"></div>
 </body>
 </html>
