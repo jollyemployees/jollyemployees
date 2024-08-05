@@ -2,215 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Complex Layout</title>
+    <title>Left-Aligned Gray Box with Links</title>
     <style>
-        html, body {
+        @font-face {
+            font-family: 'Olympic Sans';
+            src: url('https://github.com/jollyemployees/jollyemployees/raw/main/OlympicSans.ttf') format('truetype');
+        }
+
+        body, html {
             margin: 0;
             padding: 0;
-            width: 100%;
             height: 100%;
-            overflow: hidden;
         }
-        .table {
-            display: flex;
-            width: 100%;
-            height: calc(100% - 55px - 65px); /* Full height minus the footer and first row */
-            overflow-y: auto;
-            margin-top: 65px;
-        }
-        .column1 {
-            width: 80px;
-            height: calc(100% - 55px);
-            background-color: black;
-            position: fixed;
-            top: 65px;
-            left: 0;
-        }
-        .content {
-            margin-left: 80px; /* Offset by the fixed column */
-            width: calc(100% - 80px);
+
+        .gray-box {
+            background-color: gray;
+            width: 95px;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .row1 {
-            height: 65px;
-            width: 100%;
-            background-color: white;
             position: fixed;
             top: 0;
-            left: 80px;
-            z-index: 1;
-        }
-        .row2 {
-            height: 70px;
-            width: 100%;
-            background-color: white;
-        }
-        .row3 {
-            height: 2000px;
-        }
-        .scroll {
-            width: 30px;
-            background-color: #ed2fe0;
-        }
-        .feed-column {
-            width: 600px;
-            display: flex;
-            flex-direction: column;
-        }
-        .feed-row {
-            height: 600px;
-            background-color: white;
-        }
-        .highlights-row {
-            height: 300px;
-            background-color: white;
-        }
-        .betting-row {
-            height: 600px;
-            background-color: white;
-        }
-        .podcasts-row {
-            height: 500px;
-            background-color: white;
-        }
-        .x-com-column {
-            width: 690px;
-            display: flex;
-            flex-direction: column;
-        }
-        .x-com-news {
-            height: 900px;
-            display: flex;
-        }
-        .x-com-column-within {
-            width: 470px;
-            background-color: white;
-        }
-        .news-column-within {
-            width: 220px;
-            background-color: white;
-        }
-        .standings {
-            height: 600px;
-            background-color: white;
-        }
-        .reddit-learn {
-            height: 500px;
-            display: flex;
-        }
-        .reddit {
-            width: 470px;
-            background-color: white;
-        }
-        .learn {
-            width: 220px;
-            background-color: white;
-        }
-        .row4 {
-            height: 520px;
-        }
-        .row4 .column {
-            height: 100%;
-        }
-        .column1-row4 {
-            width: 620px;
-            background-color: white;
-        }
-        .column2-row4 {
-            width: 30px;
-            background-color: #ed2fe0;
-        }
-        .column3-row4 {
-            width: 700px;
-            background-color: white;
-        }
-        .column4-row4 {
-            width: 30px;
-            background-color: #ed2fe0;
-        }
-        .row5 {
-            height: 2400px;
-        }
-        .column1-row5 {
-            width: 30px;
-            background-color: #ed2fe0;
-        }
-        .column2-row5 {
-            width: 1300px;
-            display: flex;
-            flex-direction: column;
-        }
-        .column3-row5 {
-            width: 30px;
-            background-color: #ed2fe0;
-        }
-        .row-within {
-            width: 100%;
-            background-color: white;
-        }
-        .row-within1, .row-within2, .row-within3, .row-within4 {
-            height: 600px;
-        }
-        .footer {
-            height: 55px;
-            width: 100%;
-            background-color: black;
-            position: fixed;
-            bottom: 0;
             left: 0;
+            font-family: 'Olympic Sans', Arial, sans-serif;
+        }
+
+        .gray-box ul {
+            list-style-type: none;
+            padding: 10px 0 0 10px;
+            margin: 0;
+        }
+
+        .gray-box li {
+            margin: 0 0 10px 0;
+        }
+
+        .gray-box a {
+            color: black;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <div class="column1"></div>
-    MLB<br />
-    NFL<br />
-    <div class="row1"></div>
-    <div class="table">
-        <div class="content">
-            <div class="row row2"></div>
-            <div class="row row3">
-                <div class="scroll"></div>
-                <div class="feed-column">
-                    <div class="feed-row"></div>
-                    <div class="highlights-row"></div>
-                    <div class="betting-row"></div>
-                    <div class="podcasts-row"></div>
-                </div>
-                <div class="scroll"></div>
-                <div class="x-com-column">
-                    <div class="x-com-news">
-                        <div class="x-com-column-within"></div>
-                        <div class="news-column-within"></div>
-                    </div>
-                    <div class="standings"></div>
-                    <div class="reddit-learn">
-                        <div class="reddit"></div>
-                        <div class="learn"></div>
-                    </div>
-                </div>
-                <div class="scroll"></div>
-            </div>
-            <div class="row row4">
-                <div class="column column1-row4"></div>
-                <div class="column column2-row4"></div>
-                <div class="column column3-row4"></div>
-                <div class="column column4-row4"></div>
-            </div>
-            <div class="row row5">
-                <div class="column1-row5"></div>
-                <div class="column2-row5">
-                    <div class="row-within row-within1"></div>
-                    <div class="row-within row-within2"></div>
-                    <div class="row-within row-within3"></div>
-                    <div class="row-within row-within4"></div>
-                </div>
-                <div class="column3-row5"></div>
-            </div>
-        </div>
+    <div class="gray-box">
+        <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+        </ul>
     </div>
-    <div class="footer"></div>
 </body>
 </html>
