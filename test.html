@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Left-Aligned Gray Box with Links</title>
+    <title>Left-Aligned Gray Box with Links and Iframe</title>
     <style>
         @font-face {
             font-family: 'Olympic Sans';
@@ -39,6 +39,15 @@
             color: black;
             text-decoration: none;
         }
+
+        .iframe-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 95px;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +64,7 @@
             <li><a href="#">9</a></li>
             <li><a href="#">10</a></li>
         </ul>
+        <iframe class="iframe-container" src="https://www.jollyemployees.com/test"></iframe>
     </div>
 </body>
 </html>
